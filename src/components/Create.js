@@ -5,12 +5,13 @@ const Create = () => {
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
   const [author, setAuthor] = useState('')
+  const [category, setCategory] = useState('')
   const [isPending, setIsPending] = useState(false)
   const history = useHistory()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const blog = { title, body, author }
+    const blog = { title, body, author, category }
 
     setIsPending(true)
 
@@ -44,8 +45,8 @@ const Create = () => {
         ></textarea>
         <label>Blog author:</label>
         <input value={author} onChange={(e) => setAuthor(e.target.value)} />
-        <label>Tag</label>
-        <select value={author} onChange={(e) => setAuthor(e.target.value)}>
+        <label>Blog category</label>
+        <select value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="Resources">Resources</option>
           <option value="Jobs">Jobs</option>
           <option value="Education">Education</option>

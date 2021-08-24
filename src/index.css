@@ -101,3 +101,36 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+.sign-up-container{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  margin: 24px;
+}
+
+.form-input{
+  height: 42px;
+  min-width: 350px;
+  font-size: 24px;
+  margin: 16px;
+}
+
+.form-label{
+  font-size: 36px;
+  margin: 16px;
+  float: right
+}
+
+.submit-btn{
+  margin: 24px 0;
+  color: white;
+  background: #1b326e;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-style: none;
+  border-radius: 4px;
+  letter-spacing: 2px;
+  float: right;
+}
