@@ -1,19 +1,19 @@
-mport { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import { Checkbox, Form, Input, Button } from 'antd'
 import { firebaseConfig } from '../config'
 
-function Login({ setUser }) {
+function Signup({ setUser }) {
   const history = useHistory()
   
-  const handleLogin = ({ email, password }) => {
+  const handleSignup = ({ email, password }) => {
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig)
     }
     firebase
       .auth()
-      .signInWithEmailAndPassword(email, password)
+      .createUserWithEmailAndPassword(email, password)
       .then((results) => {
         setUser(results.user)
         history.push('/')
@@ -32,7 +32,7 @@ function Login({ setUser }) {
       initialValues={{
         remember: true,
       }}
-      onFinish={handleLogin}
+      onFinish={handleSignup}
     >
       <Form.Item
         label="Email" name="email"
@@ -65,7 +65,7 @@ function Login({ setUser }) {
           span: 16,
         }}
       >
-        <Button type="primary" htmlType="submit" onClick={(e) => handleLogin(e)}>
+        <Button type="primary" htmlType="submit" onClick={(e) => handleSignup(e)}>
           Submit
         </Button>
       </Form.Item>
@@ -73,7 +73,7 @@ function Login({ setUser }) {
   )
 }
 
-export default Login
+export default Signup
 
 
 

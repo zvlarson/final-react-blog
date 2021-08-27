@@ -1,17 +1,18 @@
 import { useHistory, useParams } from 'react-router-dom'
 import useFetch from '../useFetch'
+import {useState} from 'react';
+
 
 const BlogDetails = () => {
+  const history = useHistory();
   const { id } = useParams()
-
   const {
     data: blog,
     error,
     isPending,
   } = useFetch('https://final-react-blog-be.web.app/blogs/' + id)
-  const history = useHistory()
 
-  const handleClick = () => {
+  const deleteBlog = () => {
     fetch('https://final-react-blog-be.web.app/blogs/' + blog.id, {
       method: 'DELETE',
     }).then(() => {
@@ -19,19 +20,6 @@ const BlogDetails = () => {
     })
   }
 
-  const handleEdit = () => {
-    fetch('https://final-react-blog-be.web.app/blogs/' + blog.id, {
-      method: 'PATCH',
-      body: JSON.stringify({
-        completed: true
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => console.log(json))
-  }
 
   return (
     <div className="blog-details">
@@ -42,13 +30,13 @@ const BlogDetails = () => {
           <h2>{blog.title}</h2>
           <p>Written by {blog.author}</p>
           <p>Category: {blog.category}</p>
+          <img  className="image" src={blog.pic} />
           <div>{blog.body}</div>
-          <button onClick={() => handleClick()}>Delete</button>{' '}
-          <button onClick={() => handleEdit()}>Edit</button>
+          <button onClick={() => deleteBlog()}>Delete</button>{' '}
+          <button onClick={() => history.push('/edit/' + blog.id)}>Edit</button>
         </article>
       )}
     </div>
   )
 }
-
 export default BlogDetails

@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useHistory, useParams } from 'react-router-dom'
+import useFetch from '../useFetch'
 
 
-const Create = () => {
+const Edit = () => {
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
-  const [author, setAuthor] = useState('')
-  const [pic, setPic] = useState('')
-  const [category, setCategory] = useState('Resources')
-  const [isPending, setIsPending] = useState(false)
+  const [category, setCategory] = useState('')
   const history = useHistory()
+  const { id } = useParams()
+  const {
+    data: blog,
+    error,
+    isPending,
+  } = useFetch('https://final-react-blog-be.web.app/blogs/' + id)
+
+  useEffect(() => {
+      console.log(blog);
+      if(blog) {
+          setTitle(blog.title);
+          setBody(blog.body);
+          setCategory(blog.category);
+      }
+  }, [blog])
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const blog = { title, body, author, pic, category }
-
-    setIsPending(true)
-    fetch('https://final-react-blog-be.web.app/blogs/', {
-      method: 'POST',
+    fetch('https://final-react-blog-be.web.app/blogs/' + blog.id, {
+      method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(blog),
+      body: JSON.stringify({ title, body, category }),
     }).then(() => {
-      console.log('new blog added')
-      setIsPending(false)
+      console.log('blog edited')
       history.push('/')
     })
   }
 
   return (
     <div className="create">
-      <h2>Add a New Blog</h2>
+      <h2>Edit Blog</h2>
       <form onSubmit={handleSubmit}>
         <label>Blog title:</label>
         <input
@@ -44,10 +53,6 @@ const Create = () => {
           value={body}
           onChange={(e) => setBody(e.target.value)}
         ></textarea>
-        <label>Blog author:</label>
-        <input value={author} onChange={(e) => setAuthor(e.target.value)} />
-        <label>Blog Picture:</label>
-        <input value={pic} onChange={(e) => setPic(e.target.value)} />
         <label>Blog category</label>
         <select value={category} onChange={(e) =>{
           setCategory(e.target.value)
@@ -57,11 +62,11 @@ const Create = () => {
           <option value="Jobs">Jobs</option>
           <option value="Education">Education</option>
         </select>
-        {!isPending && <button>Add blog</button>}
+        {!isPending && <button>Edit blog</button>}
         {isPending && <button disabled>Adding blog...</button>}
       </form>
     </div>
   )
 }
 
-export default Create
+export default Edit

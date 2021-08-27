@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 
 /* base styles */
 * {
   margin: 0;
-  font-family: "Quicksand";
+  font-family: 'Roboto', sans-serif;
   color: #333;
 }
 .navbar {
@@ -41,20 +41,20 @@
   border-bottom: 1px solid #fafafa;
 }
 .blog-preview:hover {
-  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
 }
 .blog-preview h2 {
   font-size: 20px;
   color: #f1356d;
   margin-bottom: 8px;
 }
-.blog-preview a{
+.blog-preview a {
   text-decoration: none;
 }
 
 /* blog details page */
 .blog-details h2 {
-  font-size: 20px;
+  font-size: 60px;
   color: #f1356d;
   margin-bottom: 10px;
 }
@@ -85,7 +85,9 @@
   color: #f1356d;
   margin-bottom: 30px;
 }
-.create input, .create textarea, .create select {
+.create input,
+.create textarea,
+.create select {
   width: 100%;
   padding: 6px 10px;
   margin: 10px 0;
@@ -102,7 +104,7 @@
   cursor: pointer;
 }
 
-.sign-up-container{
+.sign-up-container {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -110,20 +112,20 @@
   margin: 24px;
 }
 
-.form-input{
+.form-input {
   height: 42px;
   min-width: 350px;
   font-size: 24px;
   margin: 16px;
 }
 
-.form-label{
+.form-label {
   font-size: 36px;
   margin: 16px;
-  float: right
+  float: right;
 }
 
-.submit-btn{
+.submit-btn {
   margin: 24px 0;
   color: white;
   background: #1b326e;
@@ -133,4 +135,12 @@
   border-radius: 4px;
   letter-spacing: 2px;
   float: right;
+}
+
+.image {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 200px;
 }

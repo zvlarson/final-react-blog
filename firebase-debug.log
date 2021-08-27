@@ -1,0 +1,48 @@
+[debug] [2021-08-26T18:14:23.799Z] ----------------------------------------------------------------------
+[debug] [2021-08-26T18:14:23.801Z] Command:       /usr/local/bin/firebase /Users/Zach/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase emulators:start
+[debug] [2021-08-26T18:14:23.801Z] CLI Version:   9.16.0
+[debug] [2021-08-26T18:14:23.801Z] Platform:      darwin
+[debug] [2021-08-26T18:14:23.802Z] Node Version:  v12.18.1
+[debug] [2021-08-26T18:14:23.803Z] Time:          Thu Aug 26 2021 14:14:23 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-08-26T18:14:23.803Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-08-26T18:14:23.857Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-08-26T18:14:23.857Z] > authorizing via signed-in user (zvlarson@gmail.com)
+[info] i  emulators: Starting emulators: hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: hosting"}}
+[warn] ⚠  emulators: It seems that you are running multiple instances of the emulator suite for project react-blog-zl. This may result in unexpected behavior. 
+[debug] [2021-08-26T18:14:23.880Z] [hub] writing locator at /var/folders/qy/n99387vx2c5_8pcdt7k8pv480000gn/T/hub-react-blog-zl.json
+[debug] [2021-08-26T18:14:23.905Z] > refreshing access token with scopes: []
+[debug] [2021-08-26T18:14:23.905Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-08-26T18:14:24.020Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Thu, 26 Aug 2021 18:14:24 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-08-26T18:14:24.057Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/react-blog-zl/sites 
+[debug] [2021-08-26T18:14:24.626Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/react-blog-zl/sites 200
+[debug] [2021-08-26T18:14:24.626Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/react-blog-zl/sites {"sites":[{"name":"projects/159280699453/sites/react-blog-zl","defaultUrl":"https://react-blog-zl.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2021-08-26T18:14:24.626Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/react-blog-zl/webApps/-/config [none]
+[debug] [2021-08-26T18:14:25.236Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/react-blog-zl/webApps/-/config 200
+[debug] [2021-08-26T18:14:25.237Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/react-blog-zl/webApps/-/config {"projectId":"react-blog-zl","appId":"1:159280699453:web:017d16bec3ef085dd93254","storageBucket":"react-blog-zl.appspot.com","apiKey":"AIzaSyA8h_DDv3ZzlRBh0Xxe4eDi-brETAvBPOY","authDomain":"react-blog-zl.firebaseapp.com","messagingSenderId":"159280699453"}
+[info] i  hosting: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] ✔  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[warn] ⚠  emulators: The Emulator UI requires a project ID to start. Configure your default project with 'firebase use' or pass the --project flag. {"metadata":{"emulator":{"name":"hub"},"message":"The Emulator UI requires a project ID to start. Configure your default project with 'firebase use' or pass the --project flag."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+└─────────────────────────────────────────────────────────────┘
+
+┌──────────┬────────────────┐
+│ Emulator │ Host:Port      │
+├──────────┼────────────────┤
+│ Hosting  │ localhost:5000 │
+└──────────┴────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: None
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[info] i  hosting: 127.0.0.1 - - [26/Aug/2021:18:14:36 +0000] "GET / HTTP/1.1" 200 1721 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/Aug/2021:18:14:36 +0000] \"GET / HTTP/1.1\" 200 1721 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15\""}}
+[info] i  hosting: 127.0.0.1 - - [26/Aug/2021:18:14:36 +0000] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 500 - "http://localhost:5000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/Aug/2021:18:14:36 +0000] \"GET /%PUBLIC_URL%/favicon.ico HTTP/1.1\" 500 - \"http://localhost:5000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15\""}}
+[info] i  hosting: 127.0.0.1 - - [26/Aug/2021:18:14:49 +0000] "GET / HTTP/1.1" 200 1721 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/Aug/2021:18:14:49 +0000] \"GET / HTTP/1.1\" 200 1721 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/Aug/2021:18:14:50 +0000] "GET /%PUBLIC_URL%/manifest.json HTTP/1.1" 500 - "http://localhost:5000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/Aug/2021:18:14:50 +0000] \"GET /%PUBLIC_URL%/manifest.json HTTP/1.1\" 500 - \"http://localhost:5000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/Aug/2021:18:14:50 +0000] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 500 - "http://localhost:5000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/Aug/2021:18:14:50 +0000] \"GET /%PUBLIC_URL%/favicon.ico HTTP/1.1\" 500 - \"http://localhost:5000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/Aug/2021:18:15:33 +0000] "GET /signin HTTP/1.1" 404 1808 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/Aug/2021:18:15:33 +0000] \"GET /signin HTTP/1.1\" 404 1808 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/Aug/2021:18:15:38 +0000] "GET /signUp HTTP/1.1" 404 1808 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/Aug/2021:18:15:38 +0000] \"GET /signUp HTTP/1.1\" 404 1808 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36\""}}
